@@ -1,0 +1,6 @@
+@RPBDIS_6_HostAddress = http://localhost:5037
+
+GET {{RPBDIS_6_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

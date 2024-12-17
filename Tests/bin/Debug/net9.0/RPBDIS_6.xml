@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RPBDIS_6</name>
+    </assembly>
+    <members>
+        <member name="M:RPBDIS_6.Controllers.MaintenanceSchedulesController.Get">
+            <summary>
+            Получение списка всех запланированных работ
+            </summary>
+        </member>
+        <member name="M:RPBDIS_6.Controllers.MaintenanceSchedulesController.GetFilteredSchedules(System.Int32,System.Int32)">
+            <summary>
+            Получение отфильтрованного списка запланированных работ
+            </summary>
+        </member>
+        <member name="M:RPBDIS_6.Controllers.MaintenanceSchedulesController.Get(System.Int32)">
+            <summary>
+            Получение данных одного расписания
+            </summary>
+        </member>
+        <member name="M:RPBDIS_6.Controllers.MaintenanceSchedulesController.Post(RPBDIS_6.Models.MaintenanceSchedule)">
+            <summary>
+            Добавление нового расписания
+            </summary>
+        </member>
+        <member name="M:RPBDIS_6.Controllers.MaintenanceSchedulesController.Put(System.Int32,RPBDIS_6.Models.MaintenanceSchedule)">
+            <summary>
+            Обновление данных расписания
+            </summary>
+        </member>
+        <member name="M:RPBDIS_6.Controllers.MaintenanceSchedulesController.Delete(System.Int32)">
+            <summary>
+            Удаление расписания по ID
+            </summary>
+        </member>
+        <member name="M:RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEquipments">
+            <summary>
+            Список оборудования
+            </summary>
+        </member>
+        <member name="M:RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEmployees">
+            <summary>
+            Список сотрудников
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,506 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Monitoring API",
+    "description": "API для работы с системой мониторинга технического обслуживания",
+    "contact": {
+      "name": "Vanya",
+      "url": "https://github.com/Meln1kIvan",
+      "email": ""
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/api/MaintenanceSchedules": {
+      "get": {
+        "tags": [
+          "MaintenanceSchedules"
+        ],
+        "summary": "Получение списка всех запланированных работ",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaintenanceScheduleViewModel"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "MaintenanceSchedules"
+        ],
+        "summary": "Добавление нового расписания",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaintenanceSchedule"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaintenanceSchedule"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaintenanceSchedule"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MaintenanceSchedules/FilteredSchedules": {
+      "get": {
+        "tags": [
+          "MaintenanceSchedules"
+        ],
+        "summary": "Получение отфильтрованного списка запланированных работ",
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "equipmentId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaintenanceScheduleViewModel"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MaintenanceSchedules/{id}": {
+      "get": {
+        "tags": [
+          "MaintenanceSchedules"
+        ],
+        "summary": "Получение данных одного расписания",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "MaintenanceSchedules"
+        ],
+        "summary": "Обновление данных расписания",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaintenanceSchedule"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaintenanceSchedule"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaintenanceSchedule"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "MaintenanceSchedules"
+        ],
+        "summary": "Удаление расписания по ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MaintenanceSchedules/equipments": {
+      "get": {
+        "tags": [
+          "MaintenanceSchedules"
+        ],
+        "summary": "Список оборудования",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Equipment"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MaintenanceSchedules/employees": {
+      "get": {
+        "tags": [
+          "MaintenanceSchedules"
+        ],
+        "summary": "Список сотрудников",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Employee"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MaintenanceSchedules/maintenanceTypes": {
+      "get": {
+        "tags": [
+          "MaintenanceSchedules"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaintenanceType"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CompletedWork": {
+        "type": "object",
+        "properties": {
+          "completedMaintenanceId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "equipmentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maintenanceTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "responsibleEmployeeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "completionDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "actualCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "equipment": {
+            "$ref": "#/components/schemas/Equipment"
+          },
+          "maintenanceType": {
+            "$ref": "#/components/schemas/MaintenanceType"
+          },
+          "responsibleEmployee": {
+            "$ref": "#/components/schemas/Employee"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Employee": {
+        "required": [
+          "fullName",
+          "position"
+        ],
+        "type": "object",
+        "properties": {
+          "employeeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fullName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "position": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "maintenanceSchedules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MaintenanceSchedule"
+            },
+            "nullable": true
+          },
+          "completedWorks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompletedWork"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Equipment": {
+        "required": [
+          "inventoryNumber",
+          "location",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "equipmentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "inventoryNumber": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "location": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "maintenanceSchedules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MaintenanceSchedule"
+            },
+            "nullable": true
+          },
+          "completedWorks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompletedWork"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MaintenanceSchedule": {
+        "type": "object",
+        "properties": {
+          "scheduleId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "equipmentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maintenanceTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "responsibleEmployeeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "scheduledDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "estimatedCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "equipment": {
+            "$ref": "#/components/schemas/Equipment"
+          },
+          "maintenanceType": {
+            "$ref": "#/components/schemas/MaintenanceType"
+          },
+          "responsibleEmployee": {
+            "$ref": "#/components/schemas/Employee"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MaintenanceScheduleViewModel": {
+        "type": "object",
+        "properties": {
+          "scheduleId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "scheduledDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "equipmentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "equipmentName": {
+            "type": "string",
+            "nullable": true
+          },
+          "maintenanceTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maintenanceTypeDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "responsibleEmployeeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "employeeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "estimatedCost": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MaintenanceType": {
+        "required": [
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "maintenanceTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "maxLength": 150,
+            "minLength": 0,
+            "type": "string"
+          },
+          "maintenanceSchedules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MaintenanceSchedule"
+            },
+            "nullable": true
+          },
+          "completedWorks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompletedWork"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

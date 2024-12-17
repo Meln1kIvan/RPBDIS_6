@@ -1,0 +1,172 @@
+[
+  {
+    "ContainingType": "RPBDIS_6.Controllers.MaintenanceSchedulesController",
+    "Method": "Get",
+    "RelativePath": "api/MaintenanceSchedules",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[RPBDIS_6.ViewModels.MaintenanceScheduleViewModel, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RPBDIS_6.Controllers.MaintenanceSchedulesController",
+    "Method": "Post",
+    "RelativePath": "api/MaintenanceSchedules",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "schedule",
+        "Type": "RPBDIS_6.Models.MaintenanceSchedule",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RPBDIS_6.Controllers.MaintenanceSchedulesController",
+    "Method": "Get",
+    "RelativePath": "api/MaintenanceSchedules/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RPBDIS_6.Controllers.MaintenanceSchedulesController",
+    "Method": "Put",
+    "RelativePath": "api/MaintenanceSchedules/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "schedule",
+        "Type": "RPBDIS_6.Models.MaintenanceSchedule",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RPBDIS_6.Controllers.MaintenanceSchedulesController",
+    "Method": "Delete",
+    "RelativePath": "api/MaintenanceSchedules/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RPBDIS_6.Controllers.MaintenanceSchedulesController",
+    "Method": "GetEmployees",
+    "RelativePath": "api/MaintenanceSchedules/employees",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[RPBDIS_6.Models.Employee, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RPBDIS_6.Controllers.MaintenanceSchedulesController",
+    "Method": "GetEquipments",
+    "RelativePath": "api/MaintenanceSchedules/equipments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[RPBDIS_6.Models.Equipment, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RPBDIS_6.Controllers.MaintenanceSchedulesController",
+    "Method": "GetFilteredSchedules",
+    "RelativePath": "api/MaintenanceSchedules/FilteredSchedules",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employeeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "equipmentId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[RPBDIS_6.ViewModels.MaintenanceScheduleViewModel, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RPBDIS_6.Controllers.MaintenanceSchedulesController",
+    "Method": "GetMaintenanceTypes",
+    "RelativePath": "api/MaintenanceSchedules/maintenanceTypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[RPBDIS_6.Models.MaintenanceType, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

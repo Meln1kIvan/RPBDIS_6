@@ -1,0 +1,411 @@
+2024-12-17 00:03:08.576 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-17 00:03:08.625 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-17 00:03:08.782 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Employees] AS [e]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-12-17 00:03:08.942 +03:00 [INF] Now listening on: http://localhost:5037
+2024-12-17 00:03:08.976 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-17 00:03:08.976 +03:00 [INF] Hosting environment: Development
+2024-12-17 00:03:08.976 +03:00 [INF] Content root path: C:\Users\legio\Desktop\RPBDIS_6\RPBDIS_6
+2024-12-17 00:03:09.363 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/ - null null
+2024-12-17 00:03:09.529 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/ - 404 0 null 173.8036ms
+2024-12-17 00:03:09.530 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5037/, Response status code: 404
+2024-12-17 00:03:15.183 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/MaintenanceSchedules.html - null null
+2024-12-17 00:03:15.193 +03:00 [INF] The file /MaintenanceSchedules.html was not modified
+2024-12-17 00:03:15.194 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/MaintenanceSchedules.html - 304 null text/html 11.292ms
+2024-12-17 00:03:15.210 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/lib/bootstrap/css/bootstrap.css - null null
+2024-12-17 00:03:15.211 +03:00 [INF] The file /lib/bootstrap/css/bootstrap.css was not modified
+2024-12-17 00:03:15.211 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/lib/bootstrap/css/bootstrap.css - 304 null text/css 1.7796ms
+2024-12-17 00:03:15.214 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-17 00:03:15.214 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/lib/jquery/dist/jquery.js - null null
+2024-12-17 00:03:15.215 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/lib/jquery-ui/themes/base/jquery-ui.min.css - null null
+2024-12-17 00:03:15.215 +03:00 [INF] The file /lib/jquery/dist/jquery.js was not modified
+2024-12-17 00:03:15.215 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/lib/jquery-ui/jquery-ui.js - null null
+2024-12-17 00:03:15.215 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/lib/jquery/dist/jquery.js - 304 null text/javascript 1.0643ms
+2024-12-17 00:03:15.240 +03:00 [INF] The file /lib/jquery-ui/themes/base/jquery-ui.min.css was not modified
+2024-12-17 00:03:15.265 +03:00 [INF] The file /lib/jquery-ui/jquery-ui.js was not modified
+2024-12-17 00:03:15.265 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/lib/jquery-ui/themes/base/jquery-ui.min.css - 304 null text/css 50.3836ms
+2024-12-17 00:03:15.265 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/lib/jquery-ui/jquery-ui.js - 304 null text/javascript 50.3155ms
+2024-12-17 00:03:15.267 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 53.0448ms
+2024-12-17 00:03:15.280 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/_vs/browserLink - null null
+2024-12-17 00:03:15.312 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.5822ms
+2024-12-17 00:03:15.317 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/equipments - null null
+2024-12-17 00:03:15.320 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/employees - null null
+2024-12-17 00:03:15.320 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/maintenanceTypes - null null
+2024-12-17 00:03:15.320 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules - null null
+2024-12-17 00:03:15.331 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:03:15.331 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEquipments (RPBDIS_6)'
+2024-12-17 00:03:15.331 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEmployees (RPBDIS_6)'
+2024-12-17 00:03:15.331 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetMaintenanceTypes (RPBDIS_6)'
+2024-12-17 00:03:15.345 +03:00 [INF] Route matched with {action = "GetMaintenanceTypes", controller = "MaintenanceSchedules"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[RPBDIS_6.Models.MaintenanceType]] GetMaintenanceTypes() on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:03:15.345 +03:00 [INF] Route matched with {action = "GetEquipments", controller = "MaintenanceSchedules"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[RPBDIS_6.Models.Equipment]] GetEquipments() on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:03:15.345 +03:00 [INF] Route matched with {action = "GetEmployees", controller = "MaintenanceSchedules"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[RPBDIS_6.Models.Employee]] GetEmployees() on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:03:15.345 +03:00 [INF] Route matched with {action = "Get", controller = "MaintenanceSchedules"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[RPBDIS_6.ViewModels.MaintenanceScheduleViewModel]] Get() on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:03:15.432 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MaintenanceTypeId], [m].[Description]
+FROM [MaintenanceTypes] AS [m]
+2024-12-17 00:03:15.434 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EquipmentId], [e].[InventoryNumber], [e].[Location], [e].[Name], [e].[StartDate]
+FROM [Equipments] AS [e]
+2024-12-17 00:03:15.438 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[FullName], [e].[Position]
+FROM [Employees] AS [e]
+2024-12-17 00:03:15.441 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-17 00:03:15.487 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RPBDIS_6.Models.MaintenanceType, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-17 00:03:15.487 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RPBDIS_6.Models.Equipment, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-17 00:03:15.487 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RPBDIS_6.Models.Employee, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-17 00:03:15.507 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEmployees (RPBDIS_6) in 158.6438ms
+2024-12-17 00:03:15.507 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.GetMaintenanceTypes (RPBDIS_6) in 158.4645ms
+2024-12-17 00:03:15.507 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEquipments (RPBDIS_6) in 160.6484ms
+2024-12-17 00:03:15.508 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetMaintenanceTypes (RPBDIS_6)'
+2024-12-17 00:03:15.508 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEquipments (RPBDIS_6)'
+2024-12-17 00:03:15.508 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEmployees (RPBDIS_6)'
+2024-12-17 00:03:15.512 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/employees - 200 null application/json; charset=utf-8 192.3037ms
+2024-12-17 00:03:15.512 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/maintenanceTypes - 200 null application/json; charset=utf-8 192.2928ms
+2024-12-17 00:03:15.512 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/equipments - 200 null application/json; charset=utf-8 195.0649ms
+2024-12-17 00:03:15.544 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m0].[ScheduleId], [m0].[ScheduledDate], [m0].[EquipmentId], [e].[Name] AS [EquipmentName], [m0].[MaintenanceTypeId], [m1].[Description] AS [MaintenanceTypeDescription], [m0].[ResponsibleEmployeeId], [e0].[FullName] AS [EmployeeName], [m0].[EstimatedCost]
+FROM (
+    SELECT TOP(@__p_0) [m].[ScheduleId], [m].[EquipmentId], [m].[EstimatedCost], [m].[MaintenanceTypeId], [m].[ResponsibleEmployeeId], [m].[ScheduledDate]
+    FROM [MaintenanceSchedules] AS [m]
+) AS [m0]
+INNER JOIN [Equipments] AS [e] ON [m0].[EquipmentId] = [e].[EquipmentId]
+INNER JOIN [MaintenanceTypes] AS [m1] ON [m0].[MaintenanceTypeId] = [m1].[MaintenanceTypeId]
+INNER JOIN [Employees] AS [e0] ON [m0].[ResponsibleEmployeeId] = [e0].[EmployeeId]
+2024-12-17 00:03:15.546 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RPBDIS_6.ViewModels.MaintenanceScheduleViewModel, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-17 00:03:15.551 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6) in 205.5113ms
+2024-12-17 00:03:15.551 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:03:15.551 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules - 200 null application/json; charset=utf-8 231.4828ms
+2024-12-17 00:03:23.575 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/lib/jquery-ui/themes/base/images/ui-icons_444444_256x240.png - null null
+2024-12-17 00:03:23.576 +03:00 [INF] The file /lib/jquery-ui/themes/base/images/ui-icons_444444_256x240.png was not modified
+2024-12-17 00:03:23.576 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/lib/jquery-ui/themes/base/images/ui-icons_444444_256x240.png - 304 null image/png 1.102ms
+2024-12-17 00:03:30.950 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5037/api/MaintenanceSchedules - application/json 144
+2024-12-17 00:03:30.952 +03:00 [INF] CORS policy execution successful.
+2024-12-17 00:03:30.954 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Post (RPBDIS_6)'
+2024-12-17 00:03:30.960 +03:00 [INF] Route matched with {action = "Post", controller = "MaintenanceSchedules"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(RPBDIS_6.Models.MaintenanceSchedule) on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:03:30.990 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-12-17 00:03:31.007 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.Post (RPBDIS_6) in 46.5754ms
+2024-12-17 00:03:31.007 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Post (RPBDIS_6)'
+2024-12-17 00:03:31.007 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5037/api/MaintenanceSchedules - 400 null application/problem+json; charset=utf-8 56.5277ms
+2024-12-17 00:05:35.397 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-17 00:05:35.444 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-17 00:05:35.598 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Employees] AS [e]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-12-17 00:05:35.744 +03:00 [INF] Now listening on: http://localhost:5037
+2024-12-17 00:05:35.773 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-17 00:05:35.774 +03:00 [INF] Hosting environment: Development
+2024-12-17 00:05:35.774 +03:00 [INF] Content root path: C:\Users\legio\Desktop\RPBDIS_6\RPBDIS_6
+2024-12-17 00:05:36.321 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/ - null null
+2024-12-17 00:05:36.479 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/ - 404 0 null 164.9529ms
+2024-12-17 00:05:36.481 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5037/, Response status code: 404
+2024-12-17 00:08:31.097 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-17 00:08:31.146 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-17 00:08:31.304 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Employees] AS [e]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-12-17 00:08:31.457 +03:00 [INF] Now listening on: http://localhost:5037
+2024-12-17 00:08:31.493 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-17 00:08:31.493 +03:00 [INF] Hosting environment: Development
+2024-12-17 00:08:31.493 +03:00 [INF] Content root path: C:\Users\legio\Desktop\RPBDIS_6\RPBDIS_6
+2024-12-17 00:08:31.751 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/ - null null
+2024-12-17 00:08:31.886 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/ - 404 0 null 141.7656ms
+2024-12-17 00:08:31.887 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5037/, Response status code: 404
+2024-12-17 00:08:36.585 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-17 00:08:36.587 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 3.0679ms
+2024-12-17 00:08:36.644 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/_vs/browserLink - null null
+2024-12-17 00:08:36.667 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.2219ms
+2024-12-17 00:08:36.679 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/equipments - null null
+2024-12-17 00:08:36.679 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/maintenanceTypes - null null
+2024-12-17 00:08:36.679 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/employees - null null
+2024-12-17 00:08:36.708 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules - null null
+2024-12-17 00:08:36.740 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:08:36.740 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEquipments (RPBDIS_6)'
+2024-12-17 00:08:36.740 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEmployees (RPBDIS_6)'
+2024-12-17 00:08:36.740 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetMaintenanceTypes (RPBDIS_6)'
+2024-12-17 00:08:36.778 +03:00 [INF] Route matched with {action = "Get", controller = "MaintenanceSchedules"}. Executing controller action with signature System.Collections.Generic.List`1[RPBDIS_6.ViewModels.MaintenanceScheduleViewModel] Get() on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:08:36.778 +03:00 [INF] Route matched with {action = "GetEmployees", controller = "MaintenanceSchedules"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[RPBDIS_6.Models.Employee] GetEmployees() on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:08:36.778 +03:00 [INF] Route matched with {action = "GetEquipments", controller = "MaintenanceSchedules"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[RPBDIS_6.Models.Equipment] GetEquipments() on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:08:36.778 +03:00 [INF] Route matched with {action = "GetMaintenanceTypes", controller = "MaintenanceSchedules"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[RPBDIS_6.Models.MaintenanceType] GetMaintenanceTypes() on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:08:36.810 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-17 00:08:36.820 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MaintenanceTypeId], [m].[Description]
+FROM [MaintenanceTypes] AS [m]
+2024-12-17 00:08:36.821 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EquipmentId], [e].[InventoryNumber], [e].[Location], [e].[Name], [e].[StartDate]
+FROM [Equipments] AS [e]
+2024-12-17 00:08:36.822 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[FullName], [e].[Position]
+FROM [Employees] AS [e]
+2024-12-17 00:08:36.891 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[RPBDIS_6.Models.MaintenanceType, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-17 00:08:36.891 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[RPBDIS_6.Models.Employee, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-17 00:08:36.891 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[RPBDIS_6.Models.Equipment, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-17 00:08:36.899 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m0].[ScheduleId], [m0].[ScheduledDate], [m0].[EquipmentId], [e].[Name] AS [EquipmentName], [m0].[MaintenanceTypeId], [m1].[Description] AS [MaintenanceTypeDescription], [m0].[ResponsibleEmployeeId], [e0].[FullName] AS [EmployeeName], [m0].[EstimatedCost]
+FROM (
+    SELECT TOP(@__p_0) [m].[ScheduleId], [m].[EquipmentId], [m].[EstimatedCost], [m].[MaintenanceTypeId], [m].[ResponsibleEmployeeId], [m].[ScheduledDate]
+    FROM [MaintenanceSchedules] AS [m]
+) AS [m0]
+INNER JOIN [Equipments] AS [e] ON [m0].[EquipmentId] = [e].[EquipmentId]
+INNER JOIN [MaintenanceTypes] AS [m1] ON [m0].[MaintenanceTypeId] = [m1].[MaintenanceTypeId]
+INNER JOIN [Employees] AS [e0] ON [m0].[ResponsibleEmployeeId] = [e0].[EmployeeId]
+2024-12-17 00:08:36.901 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[RPBDIS_6.ViewModels.MaintenanceScheduleViewModel, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-17 00:08:36.904 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.GetMaintenanceTypes (RPBDIS_6) in 123.0185ms
+2024-12-17 00:08:36.904 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEmployees (RPBDIS_6) in 123.0869ms
+2024-12-17 00:08:36.904 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEquipments (RPBDIS_6) in 124.3447ms
+2024-12-17 00:08:36.904 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEmployees (RPBDIS_6)'
+2024-12-17 00:08:36.904 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetMaintenanceTypes (RPBDIS_6)'
+2024-12-17 00:08:36.904 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEquipments (RPBDIS_6)'
+2024-12-17 00:08:36.904 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6) in 125.4368ms
+2024-12-17 00:08:36.904 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:08:36.908 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules - 200 null application/json; charset=utf-8 200.2826ms
+2024-12-17 00:08:36.908 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/maintenanceTypes - 200 null application/json; charset=utf-8 229.0749ms
+2024-12-17 00:08:36.908 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/equipments - 200 null application/json; charset=utf-8 229.8673ms
+2024-12-17 00:08:36.908 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/employees - 200 null application/json; charset=utf-8 229.364ms
+2024-12-17 00:08:41.039 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/10012 - null null
+2024-12-17 00:08:41.041 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:08:41.049 +03:00 [INF] Route matched with {action = "Get", controller = "MaintenanceSchedules"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:08:41.161 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[ScheduleId], [m].[EquipmentId], [m].[EstimatedCost], [m].[MaintenanceTypeId], [m].[ResponsibleEmployeeId], [m].[ScheduledDate], [e].[EquipmentId], [e].[InventoryNumber], [e].[Location], [e].[Name], [e].[StartDate], [m0].[MaintenanceTypeId], [m0].[Description], [e0].[EmployeeId], [e0].[FullName], [e0].[Position]
+FROM [MaintenanceSchedules] AS [m]
+INNER JOIN [Equipments] AS [e] ON [m].[EquipmentId] = [e].[EquipmentId]
+INNER JOIN [MaintenanceTypes] AS [m0] ON [m].[MaintenanceTypeId] = [m0].[MaintenanceTypeId]
+INNER JOIN [Employees] AS [e0] ON [m].[ResponsibleEmployeeId] = [e0].[EmployeeId]
+WHERE [m].[ScheduleId] = @__id_0
+2024-12-17 00:08:41.188 +03:00 [INF] Executing OkObjectResult, writing value of type 'RPBDIS_6.ViewModels.MaintenanceScheduleViewModel'.
+2024-12-17 00:08:41.189 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6) in 139.594ms
+2024-12-17 00:08:41.189 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:08:41.189 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/10012 - 200 null application/json; charset=utf-8 150.3069ms
+2024-12-17 00:08:47.185 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5037/api/MaintenanceSchedules - application/json 148
+2024-12-17 00:08:47.186 +03:00 [INF] CORS policy execution successful.
+2024-12-17 00:08:47.187 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2024-12-17 00:08:47.187 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2024-12-17 00:08:47.187 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5037/api/MaintenanceSchedules - 405 0 null 2.5913ms
+2024-12-17 00:09:02.582 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/10012 - null null
+2024-12-17 00:09:02.582 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:09:02.583 +03:00 [INF] Route matched with {action = "Get", controller = "MaintenanceSchedules"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:09:02.587 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[ScheduleId], [m].[EquipmentId], [m].[EstimatedCost], [m].[MaintenanceTypeId], [m].[ResponsibleEmployeeId], [m].[ScheduledDate], [e].[EquipmentId], [e].[InventoryNumber], [e].[Location], [e].[Name], [e].[StartDate], [m0].[MaintenanceTypeId], [m0].[Description], [e0].[EmployeeId], [e0].[FullName], [e0].[Position]
+FROM [MaintenanceSchedules] AS [m]
+INNER JOIN [Equipments] AS [e] ON [m].[EquipmentId] = [e].[EquipmentId]
+INNER JOIN [MaintenanceTypes] AS [m0] ON [m].[MaintenanceTypeId] = [m0].[MaintenanceTypeId]
+INNER JOIN [Employees] AS [e0] ON [m].[ResponsibleEmployeeId] = [e0].[EmployeeId]
+WHERE [m].[ScheduleId] = @__id_0
+2024-12-17 00:09:02.587 +03:00 [INF] Executing OkObjectResult, writing value of type 'RPBDIS_6.ViewModels.MaintenanceScheduleViewModel'.
+2024-12-17 00:09:02.588 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6) in 5.043ms
+2024-12-17 00:09:02.588 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:09:02.588 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/10012 - 200 null application/json; charset=utf-8 6.0056ms
+2024-12-17 00:09:03.357 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/10012 - null null
+2024-12-17 00:09:03.357 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:09:03.357 +03:00 [INF] Route matched with {action = "Get", controller = "MaintenanceSchedules"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:09:03.359 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[ScheduleId], [m].[EquipmentId], [m].[EstimatedCost], [m].[MaintenanceTypeId], [m].[ResponsibleEmployeeId], [m].[ScheduledDate], [e].[EquipmentId], [e].[InventoryNumber], [e].[Location], [e].[Name], [e].[StartDate], [m0].[MaintenanceTypeId], [m0].[Description], [e0].[EmployeeId], [e0].[FullName], [e0].[Position]
+FROM [MaintenanceSchedules] AS [m]
+INNER JOIN [Equipments] AS [e] ON [m].[EquipmentId] = [e].[EquipmentId]
+INNER JOIN [MaintenanceTypes] AS [m0] ON [m].[MaintenanceTypeId] = [m0].[MaintenanceTypeId]
+INNER JOIN [Employees] AS [e0] ON [m].[ResponsibleEmployeeId] = [e0].[EmployeeId]
+WHERE [m].[ScheduleId] = @__id_0
+2024-12-17 00:09:03.360 +03:00 [INF] Executing OkObjectResult, writing value of type 'RPBDIS_6.ViewModels.MaintenanceScheduleViewModel'.
+2024-12-17 00:09:03.360 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6) in 2.7778ms
+2024-12-17 00:09:03.360 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:09:03.360 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/10012 - 200 null application/json; charset=utf-8 3.4908ms
+2024-12-17 00:09:04.286 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/10011 - null null
+2024-12-17 00:09:04.286 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:09:04.286 +03:00 [INF] Route matched with {action = "Get", controller = "MaintenanceSchedules"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:09:04.288 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[ScheduleId], [m].[EquipmentId], [m].[EstimatedCost], [m].[MaintenanceTypeId], [m].[ResponsibleEmployeeId], [m].[ScheduledDate], [e].[EquipmentId], [e].[InventoryNumber], [e].[Location], [e].[Name], [e].[StartDate], [m0].[MaintenanceTypeId], [m0].[Description], [e0].[EmployeeId], [e0].[FullName], [e0].[Position]
+FROM [MaintenanceSchedules] AS [m]
+INNER JOIN [Equipments] AS [e] ON [m].[EquipmentId] = [e].[EquipmentId]
+INNER JOIN [MaintenanceTypes] AS [m0] ON [m].[MaintenanceTypeId] = [m0].[MaintenanceTypeId]
+INNER JOIN [Employees] AS [e0] ON [m].[ResponsibleEmployeeId] = [e0].[EmployeeId]
+WHERE [m].[ScheduleId] = @__id_0
+2024-12-17 00:09:04.289 +03:00 [INF] Executing OkObjectResult, writing value of type 'RPBDIS_6.ViewModels.MaintenanceScheduleViewModel'.
+2024-12-17 00:09:04.289 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6) in 2.8422ms
+2024-12-17 00:09:04.289 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:09:04.289 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/10011 - 200 null application/json; charset=utf-8 3.8113ms
+2024-12-17 00:09:07.650 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5037/api/MaintenanceSchedules - application/json 148
+2024-12-17 00:09:07.651 +03:00 [INF] CORS policy execution successful.
+2024-12-17 00:09:07.651 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2024-12-17 00:09:07.651 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2024-12-17 00:09:07.651 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5037/api/MaintenanceSchedules - 405 0 null 0.7498ms
+2024-12-17 00:09:12.449 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/lib/bootstrap/css/bootstrap.css.map - null null
+2024-12-17 00:09:12.459 +03:00 [INF] The file /lib/bootstrap/css/bootstrap.css.map was not modified
+2024-12-17 00:09:12.459 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/lib/bootstrap/css/bootstrap.css.map - 304 null text/plain 10.3563ms
+2024-12-17 00:09:40.112 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-17 00:09:40.160 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-17 00:09:40.335 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Employees] AS [e]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-12-17 00:09:40.502 +03:00 [INF] Now listening on: http://localhost:5037
+2024-12-17 00:09:40.534 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-17 00:09:40.534 +03:00 [INF] Hosting environment: Development
+2024-12-17 00:09:40.534 +03:00 [INF] Content root path: C:\Users\legio\Desktop\RPBDIS_6\RPBDIS_6
+2024-12-17 00:09:40.841 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/ - null null
+2024-12-17 00:09:41.003 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/ - 404 0 null 169.8435ms
+2024-12-17 00:09:41.005 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5037/, Response status code: 404
+2024-12-17 00:09:44.985 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-17 00:09:44.988 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 2.8963ms
+2024-12-17 00:09:45.042 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/_vs/browserLink - null null
+2024-12-17 00:09:45.066 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.8672ms
+2024-12-17 00:09:45.075 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/equipments - null null
+2024-12-17 00:09:45.075 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/maintenanceTypes - null null
+2024-12-17 00:09:45.076 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/employees - null null
+2024-12-17 00:09:45.107 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules - null null
+2024-12-17 00:09:45.114 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetMaintenanceTypes (RPBDIS_6)'
+2024-12-17 00:09:45.114 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:09:45.114 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEquipments (RPBDIS_6)'
+2024-12-17 00:09:45.114 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEmployees (RPBDIS_6)'
+2024-12-17 00:09:45.154 +03:00 [INF] Route matched with {action = "GetEquipments", controller = "MaintenanceSchedules"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[RPBDIS_6.Models.Equipment]] GetEquipments() on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:09:45.154 +03:00 [INF] Route matched with {action = "Get", controller = "MaintenanceSchedules"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[RPBDIS_6.ViewModels.MaintenanceScheduleViewModel]] Get() on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:09:45.154 +03:00 [INF] Route matched with {action = "GetMaintenanceTypes", controller = "MaintenanceSchedules"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[RPBDIS_6.Models.MaintenanceType]] GetMaintenanceTypes() on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:09:45.154 +03:00 [INF] Route matched with {action = "GetEmployees", controller = "MaintenanceSchedules"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[RPBDIS_6.Models.Employee]] GetEmployees() on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:09:45.215 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-12-17 00:09:45.225 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EquipmentId], [e].[InventoryNumber], [e].[Location], [e].[Name], [e].[StartDate]
+FROM [Equipments] AS [e]
+2024-12-17 00:09:45.226 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeId], [e].[FullName], [e].[Position]
+FROM [Employees] AS [e]
+2024-12-17 00:09:45.230 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[MaintenanceTypeId], [m].[Description]
+FROM [MaintenanceTypes] AS [m]
+2024-12-17 00:09:45.260 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RPBDIS_6.Models.Equipment, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-17 00:09:45.260 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RPBDIS_6.Models.MaintenanceType, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-17 00:09:45.260 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RPBDIS_6.Models.Employee, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-17 00:09:45.274 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m0].[ScheduleId], [m0].[ScheduledDate], [m0].[EquipmentId], [e].[Name] AS [EquipmentName], [m0].[MaintenanceTypeId], [m1].[Description] AS [MaintenanceTypeDescription], [m0].[ResponsibleEmployeeId], [e0].[FullName] AS [EmployeeName], [m0].[EstimatedCost]
+FROM (
+    SELECT TOP(@__p_0) [m].[ScheduleId], [m].[EquipmentId], [m].[EstimatedCost], [m].[MaintenanceTypeId], [m].[ResponsibleEmployeeId], [m].[ScheduledDate]
+    FROM [MaintenanceSchedules] AS [m]
+) AS [m0]
+INNER JOIN [Equipments] AS [e] ON [m0].[EquipmentId] = [e].[EquipmentId]
+INNER JOIN [MaintenanceTypes] AS [m1] ON [m0].[MaintenanceTypeId] = [m1].[MaintenanceTypeId]
+INNER JOIN [Employees] AS [e0] ON [m0].[ResponsibleEmployeeId] = [e0].[EmployeeId]
+2024-12-17 00:09:45.276 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RPBDIS_6.ViewModels.MaintenanceScheduleViewModel, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-17 00:09:45.277 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEmployees (RPBDIS_6) in 119.2886ms
+2024-12-17 00:09:45.277 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.GetMaintenanceTypes (RPBDIS_6) in 119.6368ms
+2024-12-17 00:09:45.277 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEquipments (RPBDIS_6) in 121.8213ms
+2024-12-17 00:09:45.277 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEmployees (RPBDIS_6)'
+2024-12-17 00:09:45.277 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetMaintenanceTypes (RPBDIS_6)'
+2024-12-17 00:09:45.277 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.GetEquipments (RPBDIS_6)'
+2024-12-17 00:09:45.278 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6) in 123.6862ms
+2024-12-17 00:09:45.278 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:09:45.280 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules - 200 null application/json; charset=utf-8 172.8086ms
+2024-12-17 00:09:45.280 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/employees - 200 null application/json; charset=utf-8 204.3413ms
+2024-12-17 00:09:45.280 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/maintenanceTypes - 200 null application/json; charset=utf-8 204.8568ms
+2024-12-17 00:09:45.280 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/equipments - 200 null application/json; charset=utf-8 205.0234ms
+2024-12-17 00:09:48.111 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/10009 - null null
+2024-12-17 00:09:48.113 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:09:48.120 +03:00 [INF] Route matched with {action = "Get", controller = "MaintenanceSchedules"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:09:48.195 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[ScheduleId], [m].[ScheduledDate], [m].[EquipmentId], [e].[Name] AS [EquipmentName], [m].[MaintenanceTypeId], [m0].[Description] AS [MaintenanceTypeDescription], [m].[ResponsibleEmployeeId], [e0].[FullName] AS [EmployeeName], [m].[EstimatedCost]
+FROM [MaintenanceSchedules] AS [m]
+INNER JOIN [Equipments] AS [e] ON [m].[EquipmentId] = [e].[EquipmentId]
+INNER JOIN [MaintenanceTypes] AS [m0] ON [m].[MaintenanceTypeId] = [m0].[MaintenanceTypeId]
+INNER JOIN [Employees] AS [e0] ON [m].[ResponsibleEmployeeId] = [e0].[EmployeeId]
+WHERE [m].[ScheduleId] = @__id_0
+2024-12-17 00:09:48.195 +03:00 [INF] Executing OkObjectResult, writing value of type 'RPBDIS_6.ViewModels.MaintenanceScheduleViewModel'.
+2024-12-17 00:09:48.196 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6) in 75.5668ms
+2024-12-17 00:09:48.196 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:09:48.196 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules/10009 - 200 null application/json; charset=utf-8 85.0971ms
+2024-12-17 00:09:56.144 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5037/api/MaintenanceSchedules - application/json 148
+2024-12-17 00:09:56.145 +03:00 [INF] CORS policy execution successful.
+2024-12-17 00:09:56.146 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2024-12-17 00:09:56.146 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2024-12-17 00:09:56.146 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5037/api/MaintenanceSchedules - 405 0 null 2.6092ms
+2024-12-17 00:10:03.383 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules - null null
+2024-12-17 00:10:03.389 +03:00 [INF] Executing endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:10:03.389 +03:00 [INF] Route matched with {action = "Get", controller = "MaintenanceSchedules"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[RPBDIS_6.ViewModels.MaintenanceScheduleViewModel]] Get() on controller RPBDIS_6.Controllers.MaintenanceSchedulesController (RPBDIS_6).
+2024-12-17 00:10:03.394 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m0].[ScheduleId], [m0].[ScheduledDate], [m0].[EquipmentId], [e].[Name] AS [EquipmentName], [m0].[MaintenanceTypeId], [m1].[Description] AS [MaintenanceTypeDescription], [m0].[ResponsibleEmployeeId], [e0].[FullName] AS [EmployeeName], [m0].[EstimatedCost]
+FROM (
+    SELECT TOP(@__p_0) [m].[ScheduleId], [m].[EquipmentId], [m].[EstimatedCost], [m].[MaintenanceTypeId], [m].[ResponsibleEmployeeId], [m].[ScheduledDate]
+    FROM [MaintenanceSchedules] AS [m]
+) AS [m0]
+INNER JOIN [Equipments] AS [e] ON [m0].[EquipmentId] = [e].[EquipmentId]
+INNER JOIN [MaintenanceTypes] AS [m1] ON [m0].[MaintenanceTypeId] = [m1].[MaintenanceTypeId]
+INNER JOIN [Employees] AS [e0] ON [m0].[ResponsibleEmployeeId] = [e0].[EmployeeId]
+2024-12-17 00:10:03.395 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RPBDIS_6.ViewModels.MaintenanceScheduleViewModel, RPBDIS_6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-17 00:10:03.400 +03:00 [INF] Executed action RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6) in 10.5087ms
+2024-12-17 00:10:03.400 +03:00 [INF] Executed endpoint 'RPBDIS_6.Controllers.MaintenanceSchedulesController.Get (RPBDIS_6)'
+2024-12-17 00:10:03.400 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5037/api/MaintenanceSchedules - 200 null application/json; charset=utf-8 16.9401ms
